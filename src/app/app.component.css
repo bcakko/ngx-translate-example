@@ -1,0 +1,29 @@
+.page-wrapper {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: "wrap";
+  width: 100%;
+}
+
+.navigation > * {
+  padding: 0.5rem 1rem;
+  margin-left: 0.25rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  background: purple;
+  color: white;
+}
+
+.language-switch {
+  width: 3rem;
+  height: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  background: purple;
+  color: white;
+}
