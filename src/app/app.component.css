@@ -10,13 +10,19 @@
   width: 100%;
 }
 
-.navigation > * {
+.navlink {
   padding: 0.5rem 1rem;
   margin-left: 0.25rem;
   border-radius: 1rem;
   text-decoration: none;
   background: purple;
   color: white;
+}
+
+.active-link {
+  background: white;
+  color: inherit;
+  border: 1px solid black;
 }
 
 .language-switch {

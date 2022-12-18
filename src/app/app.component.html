@@ -2,12 +2,18 @@
   <header class="header">
     <h1 class="main-caption">ngx-translate</h1>
     <nav class="navigation">
-      <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page"
-        >Homepage</a
+      <a
+        class="navlink"
+        routerLink=""
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        >Home</a
       >
       <a
+        class="navlink"
         routerLink="/details"
-        routerLinkActive="active"
+        routerLinkActive="active-link"
         ariaCurrentWhenActive="page"
         >Details</a
       >
