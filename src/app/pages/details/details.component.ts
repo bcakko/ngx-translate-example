@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent {
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit() {
+    this.translate.setDefaultLang('en');
+    this.translate.use(this.translate.store.currentLang);
   }
 }

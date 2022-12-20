@@ -15,6 +15,7 @@ export class LanguageSelectorComponent {
   }
 
   changeLanguage() {
+    console.log('Language changed to: ' + this.selectedLanguage);
     this.translate.use(this.selectedLanguage);
   }
 }

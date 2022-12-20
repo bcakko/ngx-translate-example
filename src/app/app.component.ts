@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,14 +6,13 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'ngx-translate-example';
-
-  constructor(private readonly translate: TranslateService) {
-    // Set the default language
+export class AppComponent implements OnInit {
+  constructor(private translate: TranslateService) {
+    // Register translation languages
+    translate.addLangs(['en', 'tr']);
+    // Set default language
     translate.setDefaultLang('en');
-
-    // Use the `use` method to set the active language
-    translate.use('en');
   }
+
+  ngOnInit() {}
 }
