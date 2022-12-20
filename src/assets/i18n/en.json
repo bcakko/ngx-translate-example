@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "ngx-translate example",
+    "navigation": {
+      "home": "Home",
+      "details": "Details"
+    }
+  }
+}

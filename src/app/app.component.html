@@ -1,27 +1,23 @@
 <div class="page-wrapper">
   <header class="header">
-    <h1 class="main-caption">ngx-translate</h1>
+    <h1 class="main-caption">{{ "header.title" | translate }}</h1>
+    <app-language-selector></app-language-selector>
     <nav class="navigation">
       <a
         class="navlink"
-        routerLink=""
+        routerLink="/home"
         routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{ exact: true }"
         ariaCurrentWhenActive="page"
-        >Home</a
+        >{{ "header.navigation.home" | translate }}</a
       >
       <a
         class="navlink"
         routerLink="/details"
         routerLinkActive="active-link"
         ariaCurrentWhenActive="page"
-        >Details</a
+        >{{ "header.navigation.details" | translate }}</a
       >
     </nav>
-    <select class="language-switch">
-      <option>EN</option>
-      <option>TR</option>
-    </select>
   </header>
   <router-outlet></router-outlet>
 </div>

@@ -1,29 +1,46 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { RouterModule, Route } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { DetailsComponent } from './pages/details/details.component';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import { FormsModule } from '@angular/forms';
 
-const routes: Routes = [
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+const routes: Route[] = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
-    path: '',
-    component: HomepageComponent,
+    path: 'home',
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'details',
-    component: DetailsComponent,
+    loadChildren: () =>
+      import('./pages/details/details.module').then((m) => m.DetailsModule),
   },
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomepageComponent, DetailsComponent],
+  declarations: [AppComponent, LanguageSelectorComponent],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
     RouterModule.forRoot(routes),
-    TranslateModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,10 +1,11 @@
 .page-wrapper {
   padding: 1rem;
+  height: 100vh;
 }
 
 .header {
+  position: fixed;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: "wrap";
   width: 100%;

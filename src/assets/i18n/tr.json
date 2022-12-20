@@ -1,0 +1,9 @@
+{
+  "header": {
+    "title": "ngx-translate ornek",
+    "navigation": {
+      "home": "Anasayfa",
+      "details": "Detaylar"
+    }
+  }
+}
