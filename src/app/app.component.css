@@ -1,36 +1,26 @@
 .page-wrapper {
-  padding: 1rem;
   height: 100vh;
 }
 
 .header {
   position: fixed;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: "wrap";
   width: 100%;
+  padding: 0.5rem 1rem;
 }
 
 .navlink {
   padding: 0.5rem 1rem;
   margin-left: 0.25rem;
-  border-radius: 1rem;
   text-decoration: none;
-  background: purple;
-  color: white;
-}
-
-.active-link {
-  background: white;
-  color: inherit;
+  color: black;
   border: 1px solid black;
 }
 
-.language-switch {
-  width: 3rem;
-  height: 2rem;
-  border-radius: 1rem;
-  text-align: center;
-  background: purple;
-  color: white;
+.active-link {
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
 }
